@@ -3,11 +3,13 @@ from bg_remover import BgRemover
 
 
 def main():
-    print()
-
     image = cv2.imread("input.png")
 
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    remover = BgRemover()
+    removed_image = remover.remove(image)
+
+    cv2.imshow("Edited image", removed_image)
+    cv2.waitKey(0)
 
 
 if __name__ == "__main__":
