@@ -1,15 +1,9 @@
-import cv2
-from bg_remover import BgRemover
+from interface import BgRemoverWindow
 
 
 def main():
-    image = cv2.imread("input.png")
-
-    remover = BgRemover()
-    removed_image = remover.remove(image)
-
-    cv2.imshow("Edited image", removed_image)
-    cv2.waitKey(0)
+    window = BgRemoverWindow("720x480")
+    window.get_root().mainloop()
 
 
 if __name__ == "__main__":
