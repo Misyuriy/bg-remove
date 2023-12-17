@@ -20,6 +20,9 @@ class BgRemover:
         else:
             threshold = manual_threshold
 
+        if threshold >= 255:
+            threshold = 254
+
         _ret, threshold_image = cv2.threshold(gray_image, threshold, 255, cv2.THRESH_BINARY)
 
         threshold_image = cv2.bitwise_not(threshold_image)
